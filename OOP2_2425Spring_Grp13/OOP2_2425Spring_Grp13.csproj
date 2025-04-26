@@ -46,14 +46,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="FormAdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAdminPanel.Designer.cs">
+      <DependentUpon>FormAdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotes.Designer.cs">
+      <DependentUpon>FormNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPersonalInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersonalInfo.Designer.cs">
+      <DependentUpon>FormPersonalInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPhoneBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPhoneBook.Designer.cs">
+      <DependentUpon>FormPhoneBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReminder.Designer.cs">
+      <DependentUpon>FormReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalaryCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalaryCalculator.Designer.cs">
+      <DependentUpon>FormSalaryCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserManagement.Designer.cs">
+      <DependentUpon>FormUserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserPanel.Designer.cs">
+      <DependentUpon>FormUserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeetingReminder.cs" />
+    <Compile Include="Notes.cs" />
+    <Compile Include="PhoneBookRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reminder.cs" />
+    <Compile Include="TaskReminder.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="FormAdminPanel.resx">
+      <DependentUpon>FormAdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonalInfo.resx">
+      <DependentUpon>FormPersonalInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserManagement.resx">
+      <DependentUpon>FormUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserPanel.resx">
+      <DependentUpon>FormUserPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

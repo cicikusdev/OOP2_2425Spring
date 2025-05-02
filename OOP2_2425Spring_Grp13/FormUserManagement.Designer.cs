@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSendNewPassword = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             // 
             this.btnChangeType.Location = new System.Drawing.Point(444, 228);
             this.btnChangeType.Name = "btnChangeType";
-            this.btnChangeType.Size = new System.Drawing.Size(167, 31);
+            this.btnChangeType.Size = new System.Drawing.Size(139, 31);
             this.btnChangeType.TabIndex = 2;
             this.btnChangeType.Text = "Change User Type";
             this.btnChangeType.UseVisualStyleBackColor = true;
@@ -85,7 +87,6 @@
             this.label2.Size = new System.Drawing.Size(135, 22);
             this.label2.TabIndex = 5;
             this.label2.Text = "New Password:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnSendNewPassword
             // 
@@ -104,11 +105,33 @@
             this.progressBar1.Size = new System.Drawing.Size(352, 13);
             this.progressBar1.TabIndex = 7;
             // 
+            // btnSil
+            // 
+            this.btnSil.Location = new System.Drawing.Point(556, 297);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(98, 31);
+            this.btnSil.TabIndex = 9;
+            this.btnSil.Text = "Delete";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(440, 299);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 22);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Delete User:";
+            // 
             // FormUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 450);
+            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnSendNewPassword);
             this.Controls.Add(this.label2);
@@ -134,5 +157,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSendNewPassword;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Label label3;
     }
 }

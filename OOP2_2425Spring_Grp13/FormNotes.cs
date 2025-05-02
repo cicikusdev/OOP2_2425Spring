@@ -8,9 +8,10 @@ namespace OOP2_2425Spring_Grp13
 {
     public partial class FormNotes : Form
     {
+        private User currentUser;
         private List<(string note, DateTime dateTime)> notes = new List<(string, DateTime)>();
 
-        public FormNotes()
+        public FormNotes(User currentUser)
         {
             InitializeComponent();
             // Başlangıçta her iki buton da pasif
@@ -27,6 +28,7 @@ namespace OOP2_2425Spring_Grp13
 
             // Uygulama başladığında CSV'den notları yükle
             LoadNotesFromCSV("notes.csv");
+            this.currentUser = currentUser;
         }
 
         // ListBox'taki öğelerin boyutunu ayarlama (Öğeler arasına boşluk eklemek)

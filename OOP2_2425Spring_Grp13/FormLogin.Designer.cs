@@ -45,7 +45,6 @@
             this.label1.Size = new System.Drawing.Size(59, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtEmail
             // 
@@ -61,7 +60,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 22);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -72,7 +70,6 @@
             this.label2.Size = new System.Drawing.Size(94, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnLogin
             // 

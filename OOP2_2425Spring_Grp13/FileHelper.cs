@@ -14,6 +14,7 @@ namespace OOP2_2425Spring_Grp13
         public static List<User> LoadUsersFromFile()
         {
             List<User> users = new List<User>();
+            int userIdCounter = 1;
 
             if (!File.Exists(filePath))
                 return users;
@@ -28,6 +29,7 @@ namespace OOP2_2425Spring_Grp13
                 {
                     users.Add(new User
                     {
+                        Id = userIdCounter++,
                         Name = parts[0].Trim('"'),
                         Surname = parts[1].Trim('"'),
                         PhoneNumber = parts[2].Trim('"'),
@@ -71,7 +73,15 @@ namespace OOP2_2425Spring_Grp13
                 SaveUsersToFile(users);
             }
         }
-
-
+        public static void DeleteUserByEmail(string email)
+        {
+            var users = LoadUsersFromFile();
+            var userToDelete = users.FirstOrDefault(u => u.Email == email);
+            if (userToDelete != null)
+            {
+                users.Remove(userToDelete);
+                SaveUsersToFile(users);
+            }
+        }
     }
 }

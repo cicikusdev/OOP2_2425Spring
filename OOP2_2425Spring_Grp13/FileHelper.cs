@@ -55,5 +55,23 @@ namespace OOP2_2425Spring_Grp13
             File.WriteAllLines(filePath, lines);
         }
 
+        public static User CheckLogin(string email, string password)
+        {
+            var users = LoadUsersFromFile();
+            return users.FirstOrDefault(u => u.Email == email && u.Password == password);
+        }
+
+        public static void UpdateUser(User updatedUser)
+        {
+            var users = LoadUsersFromFile();
+            var index = users.FindIndex(u => u.Email == updatedUser.Email);
+            if (index != -1)
+            {
+                users[index] = updatedUser;
+                SaveUsersToFile(users);
+            }
+        }
+
+
     }
 }

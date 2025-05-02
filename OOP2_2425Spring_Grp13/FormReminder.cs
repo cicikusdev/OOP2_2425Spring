@@ -12,7 +12,7 @@ namespace OOP2_2425Spring_Grp13
 {
     public partial class FormReminder : Form
     {
-        public FormReminder()
+        public FormReminder(User user)
         {
             InitializeComponent();
         }

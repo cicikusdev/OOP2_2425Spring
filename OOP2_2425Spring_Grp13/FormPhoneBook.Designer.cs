@@ -161,6 +161,7 @@
             this.btn_clear.TabIndex = 13;
             this.btn_clear.Text = "Temizle";
             this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_save
             // 
@@ -203,6 +204,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormPhoneBook";
             this.Text = "FormPhoneBook";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhoneBook_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

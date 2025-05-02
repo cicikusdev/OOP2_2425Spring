@@ -12,15 +12,36 @@ namespace OOP2_2425Spring_Grp13
 {
     public partial class FormAdminPanel : Form
     {
-        public FormAdminPanel()
+        private User currentUser;
+        public FormAdminPanel(User currentUser)
         {
             InitializeComponent();
+            this.currentUser = currentUser;
         }
 
         private void btnGoToUserManagement_Click(object sender, EventArgs e)
         {
-            
-            
+            FormUserManagement userManagement = new FormUserManagement(currentUser, this);
+            this.Hide();
+            userManagement.Show();
+        }
+
+        private void FormAdminPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            "Are you sure you want to exit?",
+            "Exit Confirmation",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+                Application.Exit(); // Uygulamayı tamamen kapat
+            }
         }
     }
 }

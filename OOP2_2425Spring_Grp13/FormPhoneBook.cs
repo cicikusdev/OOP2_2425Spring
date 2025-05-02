@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace OOP2_2425Spring_Grp13
 {
     public partial class FormPhoneBook : Form
@@ -60,6 +61,18 @@ namespace OOP2_2425Spring_Grp13
                 address = csv_array[6],
                 description = csv_array[7]
             };
+
+        }
+
+       
+
+        private void FormPhoneBook_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
 
         }
     }

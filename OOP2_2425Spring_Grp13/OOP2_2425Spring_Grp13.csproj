@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="MeetingReminder.cs" />
     <Compile Include="Notes.cs" />
+    <Compile Include="PhonebookFileManager.cs" />
     <Compile Include="PhoneBookRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

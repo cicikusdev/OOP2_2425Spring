@@ -121,6 +121,9 @@
     <EmbeddedResource Include="FormPersonalInfo.resx">
       <DependentUpon>FormPersonalInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPhoneBook.resx">
+      <DependentUpon>FormPhoneBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUserManagement.resx">
       <DependentUpon>FormUserManagement.cs</DependentUpon>
     </EmbeddedResource>

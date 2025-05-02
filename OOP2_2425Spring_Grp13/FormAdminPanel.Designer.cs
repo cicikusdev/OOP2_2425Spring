@@ -38,7 +38,7 @@
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(212, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 46);
+            this.label1.Size = new System.Drawing.Size(202, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Admin Panel";
             // 
@@ -62,6 +62,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormAdminPanel";
             this.Text = "FormAdminPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAdminPanel_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

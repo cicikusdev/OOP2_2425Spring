@@ -10,7 +10,7 @@ namespace OOP2_2425Spring_Grp13
     public class FileHelper
     {
         private static string filePath = "users.csv";
-
+        
         public static List<User> LoadUsersFromFile()
         {
             List<User> users = new List<User>();
@@ -54,5 +54,39 @@ namespace OOP2_2425Spring_Grp13
 
             File.WriteAllLines(filePath, lines);
         }
+
+
+        //Phonebook file helper
+        private const string file_path_phonebook = "phonebook.csv";
+
+        public static List<FormPhoneBook> LoadPhoneBookFromFile()
+        {
+            List<FormPhoneBook> phone_books = new List<FormPhoneBook>();
+            if (!File.Exists(file_path_phonebook))
+                return phone_books;
+            var lines = File.ReadAllLines(file_path_phonebook);
+            foreach (var line in lines)
+            {
+                var parts = line.Split(',');
+                if (parts.Length >= 8)
+                {
+                    phone_books.Add(new FormPhoneBook
+                    {
+                        id = Guid.Parse(parts[0].Trim('"')),
+                        user_id = Guid.Parse(parts[1].Trim('"')),
+                        user_name = parts[2].Trim('"'),
+                        user_surname = parts[3].Trim('"'),
+                        phone_number = parts[4].Trim('"'),
+                        email = parts[5].Trim('"'),
+                        address = parts[6].Trim('"'),
+                        description = parts[7].Trim('"')
+                    });
+                }
+            }
+            return phone_books;
+        }
+
     }
+
+
 }

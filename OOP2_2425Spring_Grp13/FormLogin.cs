@@ -39,7 +39,7 @@ namespace OOP2_2425Spring_Grp13
                 }
                 else
                 {
-                    FormUserPanel userPanel = new FormUserPanel(); // kullanıcı bilgisi ile açıyoruz
+                    FormUserPanel userPanel = new FormUserPanel(user); // kullanıcı bilgisi ile açıyoruz
                     userPanel.Show();
                 }
 

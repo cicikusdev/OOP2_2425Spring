@@ -12,7 +12,7 @@ namespace OOP2_2425Spring_Grp13
 {
     public partial class FormNotes : Form
     {
-        public FormNotes()
+        public FormNotes(User user)
         {
             InitializeComponent();
         }

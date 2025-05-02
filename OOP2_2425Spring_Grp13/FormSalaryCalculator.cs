@@ -12,7 +12,7 @@ namespace OOP2_2425Spring_Grp13
 {
     public partial class FormSalaryCalculator : Form
     {
-        public FormSalaryCalculator()
+        public FormSalaryCalculator(User user)
         {
             InitializeComponent();
         }

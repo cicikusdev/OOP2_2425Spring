@@ -34,7 +34,7 @@ namespace OOP2_2425Spring_Grp13
 
                 if (user.UserType == "admin")
                 {
-                    FormAdminPanel adminPanel = new FormAdminPanel(); 
+                    FormAdminPanel adminPanel = new FormAdminPanel(user); 
                     adminPanel.Show();
                 }
                 else

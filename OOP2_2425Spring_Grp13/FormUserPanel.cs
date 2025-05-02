@@ -56,5 +56,23 @@ namespace OOP2_2425Spring_Grp13
             FormLogin loginForm = new FormLogin();
             loginForm.Show();
         }
+
+        private void FormUserPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            "Are you sure you want to exit?",
+            "Exit Confirmation",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+                Application.Exit(); // Uygulamayı tamamen kapat
+            }
+        }
     }
 }

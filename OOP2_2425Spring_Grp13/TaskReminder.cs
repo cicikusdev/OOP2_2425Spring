@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace OOP2_2425Spring_Grp13
+public class TaskReminder : IReminder
 {
-    public class TaskReminder: Reminder
-    {
-        public override void Notify()
-        {
+    public int Id { get; set; }
+    public DateTime ReminderDateTime { get; set; }
+    public string Summary { get; set; }
+    public string Description { get; set; }
 
-        }
+    public void Notify()
+    {
+        Console.WriteLine("Task Reminder: " + Summary);
     }
 }

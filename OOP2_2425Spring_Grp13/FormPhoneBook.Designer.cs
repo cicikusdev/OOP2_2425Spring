@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_phonebook = new System.Windows.Forms.DataGridView();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_surname = new System.Windows.Forms.TextBox();
             this.tb_phone = new System.Windows.Forms.TextBox();
@@ -44,18 +44,24 @@
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_remove = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_phonebook
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(479, 278);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_phonebook.AllowUserToAddRows = false;
+            this.dgv_phonebook.AllowUserToDeleteRows = false;
+            this.dgv_phonebook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgv_phonebook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_phonebook.Location = new System.Drawing.Point(40, 27);
+            this.dgv_phonebook.MultiSelect = false;
+            this.dgv_phonebook.Name = "dgv_phonebook";
+            this.dgv_phonebook.ReadOnly = true;
+            this.dgv_phonebook.RowHeadersWidth = 51;
+            this.dgv_phonebook.RowTemplate.Height = 24;
+            this.dgv_phonebook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_phonebook.Size = new System.Drawing.Size(479, 278);
+            this.dgv_phonebook.TabIndex = 0;
             // 
             // tb_name
             // 
@@ -157,7 +163,7 @@
             // 
             this.btn_clear.Location = new System.Drawing.Point(551, 388);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_clear.Size = new System.Drawing.Size(100, 23);
             this.btn_clear.TabIndex = 13;
             this.btn_clear.Text = "Temizle";
             this.btn_clear.UseVisualStyleBackColor = true;
@@ -165,27 +171,29 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(644, 388);
+            this.btn_save.Location = new System.Drawing.Point(662, 388);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 14;
             this.btn_save.Text = "Kaydet";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_remove
             // 
             this.btn_remove.Location = new System.Drawing.Point(551, 417);
             this.btn_remove.Name = "btn_remove";
-            this.btn_remove.Size = new System.Drawing.Size(75, 23);
+            this.btn_remove.Size = new System.Drawing.Size(100, 23);
             this.btn_remove.TabIndex = 15;
-            this.btn_remove.Text = "Sil";
+            this.btn_remove.Text = "Kullanıcı Sil";
             this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // FormPhoneBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 444);
             this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_clear);
@@ -201,11 +209,13 @@
             this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.tb_surname);
             this.Controls.Add(this.tb_name);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_phonebook);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "FormPhoneBook";
             this.Text = "FormPhoneBook";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhoneBook_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormPhoneBook_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +223,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_phonebook;
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.TextBox tb_surname;
         private System.Windows.Forms.TextBox tb_phone;

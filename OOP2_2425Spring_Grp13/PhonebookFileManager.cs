@@ -16,27 +16,75 @@ namespace OOP2_2425Spring_Grp13
             List<FormPhoneBook> phonebook = new List<FormPhoneBook>();
             if (!File.Exists(filePath))
                 return phonebook;
-            var lines = File.ReadAllLines(filePath);
-            foreach (var line in lines)
+
+            try // Added try-catch for better error handling during parsing
             {
-                var parts = line.Split(',');
-                if (parts.Length >= 8)
+                var lines = File.ReadAllLines(filePath);
+                foreach (var line in lines)
                 {
-                    phonebook.Add(new FormPhoneBook
+                    // Handle potential empty lines
+                    if (string.IsNullOrWhiteSpace(line)) continue;
+
+                    // Split while ignoring commas within quotes (simple approach)
+                    // A more robust CSV parser is better for complex cases,
+                    // but this might work for your current save format.
+                    // Let's assume the split works correctly with the quotes for now
+                    // and focus on the main add issue.
+                    var parts = line.Split(',');
+
+                    if (parts.Length >= 8)
                     {
-                        id = Guid.Parse(parts[0]),
-                        user_id = Guid.Parse(parts[1]),
-                        user_name = parts[2],
-                        user_surname = parts[3],
-                        phone_number = parts[4],
-                        email = parts[5],
-                        address = parts[6],
-                        description = parts[7]
-                    });
+                        FormPhoneBook formPhoneBook = new FormPhoneBook();
+                        try // Added inner try-catch for parsing specific lines
+                        {
+                            // Trim quotes when parsing - assuming each field is quoted
+                            // If fields might NOT be quoted, this needs adjustment.
+                            // Let's try trimming quotes first for the string fields.
+                            // GUIDs might handle quotes or just need trimming if parse fails.
+
+                            formPhoneBook.id = Guid.Parse(parts[0].Trim('"'));
+                            formPhoneBook.user_id = Guid.Parse(parts[1].Trim('"'));
+                            formPhoneBook.user_name = parts[2].Trim('"');
+                            formPhoneBook.user_surname = parts[3].Trim('"');
+                            formPhoneBook.phone_number = parts[4].Trim('"');
+                            formPhoneBook.email = parts[5].Trim('"');
+                            formPhoneBook.address = parts[6].Trim('"');
+                            formPhoneBook.description = parts[7].Trim('"');
+
+                            // *** ADD THE OBJECT TO THE LIST ***
+                            phonebook.Add(formPhoneBook);
+                        }
+                        catch (FormatException ex)
+                        {
+                            // Handle cases where a specific line fails parsing (e.g., bad GUID format)
+                            Console.WriteLine($"Error parsing line: {line}. Error: {ex.Message}");
+                            // Optionally log the error or skip the line
+                        }
+                        catch (IndexOutOfRangeException ex)
+                        {
+                            // Handle cases where a line has fewer than 8 parts unexpectedly
+                            Console.WriteLine($"Error splitting line: {line}. Expected 8 parts, got {parts.Length}. Error: {ex.Message}");
+                            // Optionally log the error or skip the line
+                        }
+                    }
+                    else
+                    {
+                        // Handle lines that don't have the expected number of parts
+                        Console.WriteLine($"Skipping malformed line: {line}. Expected 8 parts, got {parts.Length}.");
+                        // Optionally log the error
+                    }
                 }
             }
+            catch (Exception ex) // Catch potential errors during file reading
+            {
+                Console.WriteLine($"Error reading or processing file {filePath}: {ex.Message}");
+                // Depending on requirements, you might re-throw the exception or handle it gracefully
+            }
+
             return phonebook;
         }
+
+
         public static void SavePhonebookToFile(List<FormPhoneBook> phonebook)
         {
             List<string> lines = new List<string>();

@@ -16,11 +16,12 @@ namespace OOP2_2425Spring_Grp13
 
         private System.Windows.Forms.Timer reminderTimer;
         private List<string> triggeredReminders = new List<string>();
+        private Form previousForm;
 
-        public nFormReminder()
+        public nFormReminder(Form previousForm)
         {
             InitializeComponent();
-
+            this.previousForm = previousForm;
             // DateTimePicker ayarları
             dateTimePickerDate.Format = DateTimePickerFormat.Custom;
             dateTimePickerDate.CustomFormat = "dd.MM.yyyy";
@@ -300,6 +301,20 @@ namespace OOP2_2425Spring_Grp13
                 form.Invoke((MethodInvoker)delegate {
                     form.Location = originalLocation;
                 });
+            }
+        }
+
+        private void nFormReminder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Çıkış Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+
+                previousForm?.Show(); // Null kontrolü ekleyelim
             }
         }
     }

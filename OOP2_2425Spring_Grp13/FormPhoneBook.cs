@@ -15,19 +15,24 @@ namespace OOP2_2425Spring_Grp13
     public partial class FormPhoneBook : Form
     {
         private Form previous_form;
+        private User user;
         private List<FormPhoneBook> phonebook_list;
-
+        private Form previousForm;
+        private User currentUser;
         
 
         public FormPhoneBook()
         {
             InitializeComponent();
         }
-        public FormPhoneBook(Form previous_form)
+        public FormPhoneBook(Form previous_form, User currentUser)
         {
             InitializeComponent();
             this.previous_form = previous_form;
+            this.user = currentUser;
+
         }
+      
         
         public Guid id { get; set; }
         public Guid user_id { get; set; }
@@ -55,14 +60,15 @@ namespace OOP2_2425Spring_Grp13
 
         }
 
-        public static FormPhoneBook from_csv_array(string[] csv_array, Form previous_form)
+        public static FormPhoneBook from_csv_array(string[] csv_array, Form previous_form, User currentUser)
         {
             if (csv_array.Length != 8)
             {
                 throw new ArgumentException("CSV formatı doğru değil");
             }
 
-            FormPhoneBook formPhoneBook = new FormPhoneBook(previous_form);
+            FormPhoneBook formPhoneBook = new FormPhoneBook(previous_form,currentUser);
+
             formPhoneBook.id = Guid.Parse(csv_array[0]);
             formPhoneBook.user_id = Guid.Parse(csv_array[1]);
             formPhoneBook.user_name = csv_array[2];
@@ -150,17 +156,17 @@ namespace OOP2_2425Spring_Grp13
                 return;
             }
 
-            FormPhoneBook new_entry = new FormPhoneBook();
-
-
-            new_entry.user_id = Guid.NewGuid(); // Generate new user ID
-            new_entry.id = Guid.NewGuid();
-            new_entry.user_name = tb_name.Text.Trim();
-            new_entry.user_surname = tb_surname.Text.Trim();
-            new_entry.phone_number = tb_phone.Text.Trim();
-            new_entry.email = tb_email.Text.Trim();
-            new_entry.address = tb_address.Text.Trim();
-            new_entry.description = tb_desc.Text.Trim();
+            FormPhoneBook new_entry = new FormPhoneBook
+            {
+                user_id = Guid.Parse(user.Id.ToString("D32")), // Oturum açan kullanıcının ID'sini ata
+                id = Guid.NewGuid(),
+                user_name = tb_name.Text.Trim(),
+                user_surname = tb_surname.Text.Trim(),
+                phone_number = tb_phone.Text.Trim(),
+                email = tb_email.Text.Trim(),
+                address = tb_address.Text.Trim(),
+                description = tb_desc.Text.Trim()
+            };
 
             if (phonebook_list != null)
             {
@@ -223,7 +229,7 @@ namespace OOP2_2425Spring_Grp13
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "DescriptionColumn", HeaderText = "Açıklama", DataPropertyName = "description" });
 
 
-            phonebook_list = PhonebookFileManager.LoadPhonebookFromFile();
+            phonebook_list = PhonebookFileManager.LoadPhonebookFromFile(user.Id);
             if (phonebook_list != null)
             {
                 dgv_phonebook.DataSource = phonebook_list; // DataGridView'a listeyi ata
@@ -235,6 +241,18 @@ namespace OOP2_2425Spring_Grp13
             }
         }
 
-       
+        private void FormPhoneBook_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Çıkış Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+                FormUserPanel userPanel = new FormUserPanel(currentUser);
+                userPanel.Show(); // Null kontrolü ekleyelim
+            }
+        }
     }
 }

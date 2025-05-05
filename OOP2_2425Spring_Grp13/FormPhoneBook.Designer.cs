@@ -268,7 +268,9 @@ namespace OOP2_2425Spring_Grp13
             this.Controls.Add(this.dgv_phonebook);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPhoneBook";
+
             this.Text = "Phone Book";
+
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhoneBook_FormClosed);
             this.Load += new System.EventHandler(this.FormPhoneBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).EndInit();

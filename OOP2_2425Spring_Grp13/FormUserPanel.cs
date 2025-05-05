@@ -22,32 +22,41 @@ namespace OOP2_2425Spring_Grp13
 
         private void btnGoToPersonalInfo_Click(object sender, EventArgs e)
         {
-            FormPersonalInfo personalInfo = new FormPersonalInfo(currentUser);
+            FormPersonalInfo personalInfo = new FormPersonalInfo(currentUser, this);
             personalInfo.Show();
+            this.Hide();
         }
 
         private void btnGoToPhoneBook_Click(object sender, EventArgs e)
         {
-            FormPhoneBook phoneBook = new FormPhoneBook();
+            FormPhoneBook phoneBook = new FormPhoneBook(this, currentUser);
             phoneBook.Show();
+            this.Hide();
+
         }
 
         private void btnGoToNotes_Click(object sender, EventArgs e)
         {
-             FormNotes notes = new FormNotes(currentUser);
+             FormNotes notes = new FormNotes(currentUser, this);
             notes.Show();
+            this.Hide();
+
         }
 
         private void btnGoToSalaryCalculator_Click(object sender, EventArgs e)
         {
-            FormSalaryCalculator salaryForm = new FormSalaryCalculator(currentUser);
+            FormSalaryCalculator salaryForm = new FormSalaryCalculator(currentUser, this);
             salaryForm.Show();
+            this.Hide();
+
         }
 
         private void btnGoToReminders_Click(object sender, EventArgs e)
         {
-            nFormReminder reminders = new nFormReminder();
+            nFormReminder reminders = new nFormReminder(this);
             reminders.Show();
+            this.Hide();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

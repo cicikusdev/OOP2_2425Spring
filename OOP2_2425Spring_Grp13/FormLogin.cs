@@ -17,8 +17,10 @@ namespace OOP2_2425Spring_Grp13
 
         public FormLogin()
         {
+
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen; // Form ekranın ortasında başlasın
+
             users = FileHelper.LoadUsersFromFile();
         }
 

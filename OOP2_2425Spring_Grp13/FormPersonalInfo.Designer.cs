@@ -288,7 +288,11 @@ namespace OOP2_2425Spring_Grp13
             this.Controls.Add(this.lblName);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormPersonalInfo";
+
             this.Text = "Personal Information";
+
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPersonalInfo_FormClosing_1);
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

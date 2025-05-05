@@ -16,18 +16,16 @@ namespace OOP2_2425Spring_Grp13
     {
         private Form previous_form;
         private List<FormPhoneBook> phonebook_list;
-
+        private Form previousForm;
+        private User currentUser;
         
 
-        public FormPhoneBook()
+        public FormPhoneBook(/*Form previousForm*/)
         {
             InitializeComponent();
+            //this.previousForm = previousForm;
         }
-        public FormPhoneBook(Form previous_form)
-        {
-            InitializeComponent();
-            this.previous_form = previous_form;
-        }
+      
         
         public Guid id { get; set; }
         public Guid user_id { get; set; }
@@ -62,7 +60,7 @@ namespace OOP2_2425Spring_Grp13
                 throw new ArgumentException("CSV formatı doğru değil");
             }
 
-            FormPhoneBook formPhoneBook = new FormPhoneBook(previous_form);
+            FormPhoneBook formPhoneBook = new FormPhoneBook(/*previous_form*/);
             formPhoneBook.id = Guid.Parse(csv_array[0]);
             formPhoneBook.user_id = Guid.Parse(csv_array[1]);
             formPhoneBook.user_name = csv_array[2];
@@ -232,6 +230,20 @@ namespace OOP2_2425Spring_Grp13
             else
             {
                 MessageBox.Show("Kullanıcı listesi yüklenemedi.");
+            }
+        }
+
+        private void FormPhoneBook_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Çıkış Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+                FormUserPanel userPanel = new FormUserPanel(currentUser);
+                userPanel.Show(); // Null kontrolü ekleyelim
             }
         }
     }

@@ -108,6 +108,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="FormSalaryCalculator.resx">
+      <DependentUpon>FormSalaryCalculator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="nFormReminder.resx">
       <DependentUpon>nFormReminder.cs</DependentUpon>
     </EmbeddedResource>

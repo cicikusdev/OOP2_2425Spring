@@ -17,13 +17,15 @@ namespace OOP2_2425Spring_Grp13
         private User currentUser;
         private Stack<User> undoStack = new Stack<User>();
         private Stack<User> redoStack = new Stack<User>();
+        private Form previousForm;
         
-        public FormPersonalInfo(User user)
+        public FormPersonalInfo(User user, Form previousForm)
         {
             InitializeComponent();
             this.currentUser = user;
             LoadUserInfo();
             UpdateSalary();
+            this.previousForm = previousForm;
         }
         private void LoadUserInfo()
         {
@@ -145,6 +147,20 @@ namespace OOP2_2425Spring_Grp13
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormPersonalInfo_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Çıkış Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+
+                previousForm?.Show(); // Null kontrolü ekleyelim
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace OOP2_2425Spring_Grp13
 
         private void btnGoToPhoneBook_Click(object sender, EventArgs e)
         {
-            FormPhoneBook phoneBook = new FormPhoneBook();
+            FormPhoneBook phoneBook = new FormPhoneBook(this, currentUser);
             phoneBook.Show();
             this.Hide();
 

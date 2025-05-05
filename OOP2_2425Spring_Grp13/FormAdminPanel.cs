@@ -43,5 +43,12 @@ namespace OOP2_2425Spring_Grp13
                 Application.Exit(); // Uygulamayı tamamen kapat
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin loginForm = new FormLogin();
+            loginForm.Show();
+        }
     }
 }

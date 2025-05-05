@@ -24,30 +24,39 @@ namespace OOP2_2425Spring_Grp13
         {
             FormPersonalInfo personalInfo = new FormPersonalInfo(currentUser);
             personalInfo.Show();
+            this.Hide();
         }
 
         private void btnGoToPhoneBook_Click(object sender, EventArgs e)
         {
             FormPhoneBook phoneBook = new FormPhoneBook();
             phoneBook.Show();
+            this.Hide();
+
         }
 
         private void btnGoToNotes_Click(object sender, EventArgs e)
         {
              FormNotes notes = new FormNotes(currentUser);
             notes.Show();
+            this.Hide();
+
         }
 
         private void btnGoToSalaryCalculator_Click(object sender, EventArgs e)
         {
             FormSalaryCalculator salaryForm = new FormSalaryCalculator(currentUser);
             salaryForm.Show();
+            this.Hide();
+
         }
 
         private void btnGoToReminders_Click(object sender, EventArgs e)
         {
             nFormReminder reminders = new nFormReminder();
             reminders.Show();
+            this.Hide();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

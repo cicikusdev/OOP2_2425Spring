@@ -10,8 +10,9 @@ namespace OOP2_2425Spring_Grp13
     {
         private User currentUser;
         private List<(string note, DateTime dateTime)> notes = new List<(string, DateTime)>();
+        private Form previousForm;
 
-        public FormNotes(User currentUser)
+        public FormNotes(User currentUser, Form previousForm)
         {
             InitializeComponent();
             // Başlangıçta her iki buton da pasif
@@ -29,6 +30,7 @@ namespace OOP2_2425Spring_Grp13
             // Uygulama başladığında CSV'den notları yükle
             LoadNotesFromCSV("notes.csv");
             this.currentUser = currentUser;
+            this.previousForm = previousForm;
         }
 
         // ListBox'taki öğelerin boyutunu ayarlama (Öğeler arasına boşluk eklemek)
@@ -223,6 +225,20 @@ namespace OOP2_2425Spring_Grp13
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading notes from file: {ex.Message}");
+            }
+        }
+
+        private void FormNotes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Çıkış Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+
+                previousForm?.Show(); // Null kontrolü ekleyelim
             }
         }
     }

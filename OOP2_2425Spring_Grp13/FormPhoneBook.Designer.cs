@@ -201,6 +201,7 @@
             this.Controls.Add(this.dgv_phonebook);
             this.Name = "FormPhoneBook";
             this.Text = "FormPhoneBook";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPhoneBook_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhoneBook_FormClosed);
             this.Load += new System.EventHandler(this.FormPhoneBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).EndInit();

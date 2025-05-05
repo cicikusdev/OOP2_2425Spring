@@ -229,6 +229,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "FormPersonalInfo";
             this.Text = "FormPersonalInfo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPersonalInfo_FormClosing_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -27,10 +27,10 @@ namespace OOP2_2425Spring_Grp13
         // TODO: Bu bilgileri koddan çıkarıp bir ayar dosyasına taşı!
         private const string SmtpHost = "smtp.gmail.com";
         private const int SmtpPort = 587;
-        private const string SenderEmail = "seningmail@gmail.com"; // Gönderen e-posta adresi
+        private const string SenderEmail = "umayece2@gmail.com"; // Gönderen e-posta adresi
         private const string SenderName = "Admin Panel";
         // TODO: "UYGULAMA_SIFRESI" yerine gerçek Google Uygulama Şifreni yazmalısın!
-        private const string SenderAppPassword = "UYGULAMA_SIFRESI";
+        private const string SenderAppPassword = "kkro xvww xyrl qduu";
 
         private List<User> users;
         private User currentUser; // Bu formu açan yönetici kullanıcı
@@ -157,11 +157,10 @@ namespace OOP2_2425Spring_Grp13
                 try
                 {
                     string newPassword = GenerateRandomPassword();
-                    // ÖNEMLİ GÜVENLİK NOTU: Eğer kullanıcı şifrelerini bir yerde saklıyorsan
-                    // (örn. CSV dosyasında), ASLA düz metin olarak saklama!
-                    // Mutlaka güvenli bir hashing algoritması (örn. Argon2, bcrypt) ile hash'leyip sakla.
-                    // Bu kod sadece yeni şifre üretip gönderiyor, saklama kısmını senin yönetmen lazım.
-                    // Eğer FileHelper.SaveUsersToFile şifreyi hash'lemiyorsa, burada hash'lemelisin.
+                   
+                  
+                    // Bu kod sadece yeni şifre üretip gönderiyor
+                    
                     userToSend.Password = newPassword; // Yeni şifreyi ata (muhtemelen hash'lenmiş hali atanmalı)
 
                     // E-postayı asenkron olarak gönder

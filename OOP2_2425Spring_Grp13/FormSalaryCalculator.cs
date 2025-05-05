@@ -17,13 +17,15 @@ namespace OOP2_2425Spring_Grp13
     public partial class FormSalaryCalculator : Form
     {
         private User currentUser;
-        public FormSalaryCalculator(User _currentUser)
+        private Form previousForm;
+        public FormSalaryCalculator(User _currentUser, Form previousForm)
         {
             InitializeComponent();
             PopulateCityComboBox();
             PopulatePositionComboBox();
             PopulateEducationCheckList();
             this.currentUser = _currentUser;
+            this.previousForm = previousForm;
         }
 
         private void PopulateCityComboBox()
@@ -196,7 +198,19 @@ namespace OOP2_2425Spring_Grp13
             }
         }
 
-        
+        private void FormSalaryCalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Çıkmak istediğinizden emin misiniz?", "Çıkış Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Kapatmayı iptal et
+            }
+            else
+            {
+
+                previousForm?.Show(); // Null kontrolü ekleyelim
+            }
+        }
     }
 
 

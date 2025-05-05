@@ -261,6 +261,7 @@
             this.Controls.Add(this.cmbCity);
             this.Name = "FormSalaryCalculator";
             this.Text = "FormSalaryCalculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSalaryCalculator_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numericExperience)).EndInit();
             this.grpFamily.ResumeLayout(false);
             this.grpFamily.PerformLayout();

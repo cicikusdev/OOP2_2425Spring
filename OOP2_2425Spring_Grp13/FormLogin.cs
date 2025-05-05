@@ -16,7 +16,9 @@ namespace OOP2_2425Spring_Grp13
         List<User> users;
         public FormLogin()
         {
-            InitializeComponent();
+            InitializeComponent();           
+
+    
             users = FileHelper.LoadUsersFromFile();
         }
 

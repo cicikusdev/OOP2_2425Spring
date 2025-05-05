@@ -43,31 +43,35 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // tbNote
             // 
-            this.tbNote.Location = new System.Drawing.Point(12, 25);
+            this.tbNote.Location = new System.Drawing.Point(16, 31);
+            this.tbNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNote.Multiline = true;
             this.tbNote.Name = "tbNote";
-            this.tbNote.Size = new System.Drawing.Size(229, 163);
+            this.tbNote.Size = new System.Drawing.Size(304, 200);
             this.tbNote.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "New Note";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 194);
+            this.btnAdd.Location = new System.Drawing.Point(16, 239);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(109, 23);
+            this.btnAdd.Size = new System.Drawing.Size(145, 28);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -75,9 +79,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(132, 194);
+            this.btnUpdate.Location = new System.Drawing.Point(176, 239);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(109, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(145, 28);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -88,17 +93,19 @@
             this.lbNotes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lbNotes.FormattingEnabled = true;
             this.lbNotes.ItemHeight = 25;
-            this.lbNotes.Location = new System.Drawing.Point(271, 25);
+            this.lbNotes.Location = new System.Drawing.Point(361, 31);
+            this.lbNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbNotes.Name = "lbNotes";
-            this.lbNotes.Size = new System.Drawing.Size(229, 229);
+            this.lbNotes.Size = new System.Drawing.Size(304, 279);
             this.lbNotes.TabIndex = 7;
             this.lbNotes.SelectedIndexChanged += new System.EventHandler(this.lbNotes_SelectedIndexChanged);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(391, 269);
+            this.btnDelete.Location = new System.Drawing.Point(521, 331);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 23);
+            this.btnDelete.Size = new System.Drawing.Size(145, 28);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -106,36 +113,39 @@
             // 
             // tbNoteDetailed
             // 
-            this.tbNoteDetailed.Location = new System.Drawing.Point(531, 25);
+            this.tbNoteDetailed.Location = new System.Drawing.Point(708, 31);
+            this.tbNoteDetailed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNoteDetailed.Multiline = true;
             this.tbNoteDetailed.Name = "tbNoteDetailed";
             this.tbNoteDetailed.ReadOnly = true;
-            this.tbNoteDetailed.Size = new System.Drawing.Size(224, 238);
+            this.tbNoteDetailed.Size = new System.Drawing.Size(297, 292);
             this.tbNoteDetailed.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(268, 9);
+            this.label1.Location = new System.Drawing.Point(357, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(43, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Notes";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(528, 9);
+            this.label3.Location = new System.Drawing.Point(704, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Note Details";
             // 
             // FormNotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 301);
+            this.ClientSize = new System.Drawing.Size(1039, 370);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbNoteDetailed);
@@ -145,8 +155,10 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNote);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormNotes";
             this.Text = "FormNotes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormNotes_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

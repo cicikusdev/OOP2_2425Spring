@@ -105,7 +105,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
             this.Name = "FormLogin";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

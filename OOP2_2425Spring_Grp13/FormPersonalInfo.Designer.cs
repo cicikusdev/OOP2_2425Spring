@@ -43,6 +43,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.btnUploadPhoto = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSalaryAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,11 +186,32 @@
             this.btnUploadPhoto.UseVisualStyleBackColor = true;
             this.btnUploadPhoto.Click += new System.EventHandler(this.btnUploadPhoto_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(374, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 22);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Calculated Salary:";
+            // 
+            // lblSalaryAmount
+            // 
+            this.lblSalaryAmount.AutoSize = true;
+            this.lblSalaryAmount.Location = new System.Drawing.Point(537, 174);
+            this.lblSalaryAmount.Name = "lblSalaryAmount";
+            this.lblSalaryAmount.Size = new System.Drawing.Size(94, 16);
+            this.lblSalaryAmount.TabIndex = 16;
+            this.lblSalaryAmount.Text = "Salary Amount";
+            // 
             // FormPersonalInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSalaryAmount);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnUploadPhoto);
             this.Controls.Add(this.pictureBoxProfile);
             this.Controls.Add(this.btnSave);
@@ -229,5 +252,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox pictureBoxProfile;
         private System.Windows.Forms.Button btnUploadPhoto;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSalaryAmount;
     }
 }

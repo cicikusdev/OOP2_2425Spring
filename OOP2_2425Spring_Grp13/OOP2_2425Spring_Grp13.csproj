@@ -83,10 +83,6 @@
     <Compile Include="FormPhoneBook.Designer.cs">
       <DependentUpon>FormPhoneBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReminder.cs" />
-    <Compile Include="FormReminder.Designer.cs">
-      <DependentUpon>FormReminder.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSalaryCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +107,6 @@
     <Compile Include="PhoneBookRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reminder.cs" />
-    <Compile Include="TaskReminder.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="nFormReminder.resx">
       <DependentUpon>nFormReminder.cs</DependentUpon>

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -123,7 +124,27 @@ namespace OOP2_2425Spring_Grp13
                 return;
             }
 
-            if(IsUserExists())
+            if (string.IsNullOrWhiteSpace(tb_name.Text) || tb_name.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Ad sadece harf ve boşluk içerebilir.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(tb_surname.Text) || tb_surname.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Soyad sadece harf ve boşluk içerebilir.");
+                return;
+            }
+
+
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (!Regex.IsMatch(tb_email.Text.Trim(), emailPattern))
+            {
+                MessageBox.Show("Lütfen geçerli bir e-posta adresi girin.");
+                return;
+            }
+
+            if (IsUserExists())
             {
                 MessageBox.Show("Bu kullanıcı zaten mevcut.");
                 return;
@@ -134,12 +155,12 @@ namespace OOP2_2425Spring_Grp13
 
             new_entry.user_id = Guid.NewGuid(); // Generate new user ID
             new_entry.id = Guid.NewGuid();
-            new_entry.user_name = tb_name.Text;
-            new_entry.user_surname = tb_surname.Text;
-            new_entry.phone_number = tb_phone.Text;
-            new_entry.email = tb_email.Text;
-            new_entry.address = tb_address.Text;
-            new_entry.description = tb_desc.Text;
+            new_entry.user_name = tb_name.Text.Trim();
+            new_entry.user_surname = tb_surname.Text.Trim();
+            new_entry.phone_number = tb_phone.Text.Trim();
+            new_entry.email = tb_email.Text.Trim();
+            new_entry.address = tb_address.Text.Trim();
+            new_entry.description = tb_desc.Text.Trim();
 
             if (phonebook_list != null)
             {

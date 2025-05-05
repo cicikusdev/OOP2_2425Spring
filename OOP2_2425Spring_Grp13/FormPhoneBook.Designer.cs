@@ -2,15 +2,8 @@
 {
     partial class FormPhoneBook
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,16 +15,11 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.dgv_phonebook = new System.Windows.Forms.DataGridView();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_surname = new System.Windows.Forms.TextBox();
-            this.tb_phone = new System.Windows.Forms.TextBox();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.tb_address = new System.Windows.Forms.TextBox();
             this.label_name = new System.Windows.Forms.Label();
@@ -44,6 +32,7 @@
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_remove = new System.Windows.Forms.Button();
+            this.tb_phone = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +47,6 @@
             this.dgv_phonebook.Name = "dgv_phonebook";
             this.dgv_phonebook.ReadOnly = true;
             this.dgv_phonebook.RowHeadersWidth = 51;
-            this.dgv_phonebook.RowTemplate.Height = 24;
             this.dgv_phonebook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_phonebook.Size = new System.Drawing.Size(479, 278);
             this.dgv_phonebook.TabIndex = 0;
@@ -76,13 +64,6 @@
             this.tb_surname.Name = "tb_surname";
             this.tb_surname.Size = new System.Drawing.Size(100, 22);
             this.tb_surname.TabIndex = 2;
-            // 
-            // tb_phone
-            // 
-            this.tb_phone.Location = new System.Drawing.Point(551, 160);
-            this.tb_phone.Name = "tb_phone";
-            this.tb_phone.Size = new System.Drawing.Size(100, 22);
-            this.tb_phone.TabIndex = 3;
             // 
             // tb_email
             // 
@@ -189,11 +170,20 @@
             this.btn_remove.UseVisualStyleBackColor = true;
             this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
+            // tb_phone
+            // 
+            this.tb_phone.Location = new System.Drawing.Point(551, 160);
+            this.tb_phone.Mask = "(999) 000-0000";
+            this.tb_phone.Name = "tb_phone";
+            this.tb_phone.Size = new System.Drawing.Size(100, 22);
+            this.tb_phone.TabIndex = 16;
+            // 
             // FormPhoneBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 444);
+            this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_clear);
@@ -206,11 +196,9 @@
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.tb_address);
             this.Controls.Add(this.tb_email);
-            this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.tb_surname);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.dgv_phonebook);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "FormPhoneBook";
             this.Text = "FormPhoneBook";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhoneBook_FormClosed);
@@ -226,7 +214,6 @@
         private System.Windows.Forms.DataGridView dgv_phonebook;
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.TextBox tb_surname;
-        private System.Windows.Forms.TextBox tb_phone;
         private System.Windows.Forms.TextBox tb_email;
         private System.Windows.Forms.TextBox tb_address;
         private System.Windows.Forms.Label label_name;
@@ -239,5 +226,6 @@
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.MaskedTextBox tb_phone;
     }
 }

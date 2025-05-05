@@ -1,4 +1,8 @@
-﻿namespace OOP2_2425Spring_Grp13
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+namespace OOP2_2425Spring_Grp13
 {
     partial class FormPhoneBook
     {
@@ -40,149 +44,212 @@
             // 
             this.dgv_phonebook.AllowUserToAddRows = false;
             this.dgv_phonebook.AllowUserToDeleteRows = false;
-            this.dgv_phonebook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgv_phonebook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_phonebook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_phonebook.Location = new System.Drawing.Point(40, 27);
+            this.dgv_phonebook.Location = new System.Drawing.Point(30, 46);
+            this.dgv_phonebook.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_phonebook.MultiSelect = false;
             this.dgv_phonebook.Name = "dgv_phonebook";
             this.dgv_phonebook.ReadOnly = true;
             this.dgv_phonebook.RowHeadersWidth = 51;
             this.dgv_phonebook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_phonebook.Size = new System.Drawing.Size(479, 278);
+            this.dgv_phonebook.Size = new System.Drawing.Size(359, 226);
             this.dgv_phonebook.TabIndex = 0;
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(551, 51);
+            this.tb_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.tb_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_name.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_name.Location = new System.Drawing.Point(413, 46);
+            this.tb_name.Margin = new System.Windows.Forms.Padding(2);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(100, 22);
+            this.tb_name.Size = new System.Drawing.Size(151, 29);
             this.tb_name.TabIndex = 1;
+            this.tb_name.Enter += new System.EventHandler(this.TxtField_Enter);
+            this.tb_name.Leave += new System.EventHandler(this.TxtField_Leave);
             // 
             // tb_surname
             // 
-            this.tb_surname.Location = new System.Drawing.Point(551, 105);
+            this.tb_surname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.tb_surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_surname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_surname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_surname.Location = new System.Drawing.Point(413, 103);
+            this.tb_surname.Margin = new System.Windows.Forms.Padding(2);
             this.tb_surname.Name = "tb_surname";
-            this.tb_surname.Size = new System.Drawing.Size(100, 22);
+            this.tb_surname.Size = new System.Drawing.Size(151, 29);
             this.tb_surname.TabIndex = 2;
+            this.tb_surname.Enter += new System.EventHandler(this.TxtField_Enter);
+            this.tb_surname.Leave += new System.EventHandler(this.TxtField_Leave);
             // 
             // tb_email
             // 
-            this.tb_email.Location = new System.Drawing.Point(551, 218);
+            this.tb_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_email.Location = new System.Drawing.Point(413, 219);
+            this.tb_email.Margin = new System.Windows.Forms.Padding(2);
             this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(100, 22);
-            this.tb_email.TabIndex = 4;
+            this.tb_email.Size = new System.Drawing.Size(151, 26);
+            this.tb_email.TabIndex = 18;
             // 
             // tb_address
             // 
-            this.tb_address.Location = new System.Drawing.Point(551, 283);
+            this.tb_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_address.Location = new System.Drawing.Point(413, 274);
+            this.tb_address.Margin = new System.Windows.Forms.Padding(2);
             this.tb_address.Name = "tb_address";
-            this.tb_address.Size = new System.Drawing.Size(100, 22);
-            this.tb_address.TabIndex = 5;
+            this.tb_address.Size = new System.Drawing.Size(151, 26);
+            this.tb_address.TabIndex = 17;
             // 
             // label_name
             // 
             this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(548, 32);
+            this.label_name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label_name.ForeColor = System.Drawing.Color.White;
+            this.label_name.Location = new System.Drawing.Point(416, 23);
+            this.label_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(24, 16);
+            this.label_name.Size = new System.Drawing.Size(60, 21);
             this.label_name.TabIndex = 6;
-            this.label_name.Text = "Ad";
+            this.label_name.Text = "Name:";
             // 
             // label_surname
             // 
             this.label_surname.AutoSize = true;
-            this.label_surname.Location = new System.Drawing.Point(548, 86);
+            this.label_surname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label_surname.ForeColor = System.Drawing.Color.White;
+            this.label_surname.Location = new System.Drawing.Point(416, 80);
+            this.label_surname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_surname.Name = "label_surname";
-            this.label_surname.Size = new System.Drawing.Size(47, 16);
+            this.label_surname.Size = new System.Drawing.Size(82, 21);
             this.label_surname.TabIndex = 7;
-            this.label_surname.Text = "Soyad";
+            this.label_surname.Text = "Surname:";
             // 
             // label_no
             // 
             this.label_no.AutoSize = true;
-            this.label_no.Location = new System.Drawing.Point(548, 141);
+            this.label_no.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label_no.ForeColor = System.Drawing.Color.White;
+            this.label_no.Location = new System.Drawing.Point(415, 137);
+            this.label_no.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_no.Name = "label_no";
-            this.label_no.Size = new System.Drawing.Size(53, 16);
+            this.label_no.Size = new System.Drawing.Size(63, 21);
             this.label_no.TabIndex = 8;
-            this.label_no.Text = "Telefon";
+            this.label_no.Text = "Phone:";
             // 
             // label_email
             // 
             this.label_email.AutoSize = true;
-            this.label_email.Location = new System.Drawing.Point(548, 199);
+            this.label_email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label_email.ForeColor = System.Drawing.Color.White;
+            this.label_email.Location = new System.Drawing.Point(415, 195);
+            this.label_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_email.Name = "label_email";
-            this.label_email.Size = new System.Drawing.Size(41, 16);
+            this.label_email.Size = new System.Drawing.Size(57, 21);
             this.label_email.TabIndex = 9;
-            this.label_email.Text = "Email";
+            this.label_email.Text = "Email:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(548, 264);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(415, 250);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 16);
+            this.label5.Size = new System.Drawing.Size(74, 21);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Adres";
+            this.label5.Text = "Address:";
             // 
             // label_desc
             // 
             this.label_desc.AutoSize = true;
-            this.label_desc.Location = new System.Drawing.Point(552, 325);
+            this.label_desc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label_desc.ForeColor = System.Drawing.Color.White;
+            this.label_desc.Location = new System.Drawing.Point(416, 305);
+            this.label_desc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_desc.Name = "label_desc";
-            this.label_desc.Size = new System.Drawing.Size(63, 16);
+            this.label_desc.Size = new System.Drawing.Size(102, 21);
             this.label_desc.TabIndex = 11;
-            this.label_desc.Text = "Açıklama";
+            this.label_desc.Text = "Description:";
             // 
             // tb_desc
             // 
-            this.tb_desc.Location = new System.Drawing.Point(551, 344);
+            this.tb_desc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.tb_desc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_desc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_desc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_desc.Location = new System.Drawing.Point(413, 328);
+            this.tb_desc.Margin = new System.Windows.Forms.Padding(2);
             this.tb_desc.Name = "tb_desc";
-            this.tb_desc.Size = new System.Drawing.Size(100, 22);
+            this.tb_desc.Size = new System.Drawing.Size(151, 29);
             this.tb_desc.TabIndex = 12;
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(551, 388);
+            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btn_clear.FlatAppearance.BorderSize = 0;
+            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_clear.ForeColor = System.Drawing.Color.White;
+            this.btn_clear.Location = new System.Drawing.Point(254, 328);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(2);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(100, 23);
+            this.btn_clear.Size = new System.Drawing.Size(75, 29);
             this.btn_clear.TabIndex = 13;
-            this.btn_clear.Text = "Temizle";
-            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(662, 388);
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_save.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(333, 328);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_save.Size = new System.Drawing.Size(56, 29);
             this.btn_save.TabIndex = 14;
-            this.btn_save.Text = "Kaydet";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_remove
             // 
-            this.btn_remove.Location = new System.Drawing.Point(551, 417);
+            this.btn_remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btn_remove.FlatAppearance.BorderSize = 0;
+            this.btn_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_remove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_remove.ForeColor = System.Drawing.Color.White;
+            this.btn_remove.Location = new System.Drawing.Point(175, 328);
+            this.btn_remove.Margin = new System.Windows.Forms.Padding(2);
             this.btn_remove.Name = "btn_remove";
-            this.btn_remove.Size = new System.Drawing.Size(100, 23);
+            this.btn_remove.Size = new System.Drawing.Size(75, 29);
             this.btn_remove.TabIndex = 15;
-            this.btn_remove.Text = "Kullanıcı Sil";
-            this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Text = "Delete";
+            this.btn_remove.UseVisualStyleBackColor = false;
             this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // tb_phone
             // 
-            this.tb_phone.Location = new System.Drawing.Point(551, 160);
+            this.tb_phone.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_phone.Location = new System.Drawing.Point(413, 161);
+            this.tb_phone.Margin = new System.Windows.Forms.Padding(2);
             this.tb_phone.Mask = "(999) 000-0000";
             this.tb_phone.Name = "tb_phone";
-            this.tb_phone.Size = new System.Drawing.Size(100, 22);
+            this.tb_phone.Size = new System.Drawing.Size(151, 29);
             this.tb_phone.TabIndex = 16;
             // 
             // FormPhoneBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 444);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.ClientSize = new System.Drawing.Size(611, 384);
             this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.btn_save);
@@ -199,8 +266,9 @@
             this.Controls.Add(this.tb_surname);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.dgv_phonebook);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPhoneBook";
-            this.Text = "FormPhoneBook";
+            this.Text = "Phone Book";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhoneBook_FormClosed);
             this.Load += new System.EventHandler(this.FormPhoneBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).EndInit();
@@ -227,5 +295,31 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_remove;
         private System.Windows.Forms.MaskedTextBox tb_phone;
+
+        // Animasyon ve hover efektleri
+        private void Btn_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = Color.FromArgb(0, 102, 204);
+        }
+
+        private void Btn_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = Color.FromArgb(0, 123, 255);
+        }
+
+        // TextBox için fokus efekti
+        private void TxtField_Enter(object sender, EventArgs e)
+        {
+            TextBox txtBox = sender as TextBox;
+            txtBox.BackColor = Color.FromArgb(230, 230, 250);
+        }
+
+        private void TxtField_Leave(object sender, EventArgs e)
+        {
+            TextBox txtBox = sender as TextBox;
+            txtBox.BackColor = Color.FromArgb(248, 249, 250);
+        }
     }
 }

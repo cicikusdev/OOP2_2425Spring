@@ -14,9 +14,11 @@ namespace OOP2_2425Spring_Grp13
     public partial class FormLogin : Form
     {
         List<User> users;
+
         public FormLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Form ekranın ortasında başlasın
             users = FileHelper.LoadUsersFromFile();
         }
 
@@ -31,18 +33,18 @@ namespace OOP2_2425Spring_Grp13
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            // Önce email formatını kontrol et
+            // Check email format
             if (!EmailGecerliMi(email))
             {
-                MessageBox.Show("Email formatı hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid e-mail format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Sonra kullanıcı kontrolü yap
+            // Find user
             var user = users.Find(u => u.Email == email && u.Password == password);
             if (user != null)
             {
-                // Kullanıcı bulundu, tipine göre paneli aç
+                // Open panel based on user type
                 if (user.UserType == "admin")
                 {
                     FormAdminPanel adminPanel = new FormAdminPanel(user);
@@ -50,14 +52,14 @@ namespace OOP2_2425Spring_Grp13
                 }
                 else
                 {
-                    FormUserPanel userPanel = new FormUserPanel(user); // kullanıcı bilgisi ile açıyoruz
+                    FormUserPanel userPanel = new FormUserPanel(user);
                     userPanel.Show();
                 }
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Incorrect Email or Password!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Incorrect e-mail or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -66,33 +68,33 @@ namespace OOP2_2425Spring_Grp13
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            // Boş alan kontrolü
+            // Check empty fields
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Email and Password cannot be empty!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("E-mail and password cannot be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Email format kontrolü
+            // Check email format
             if (!EmailGecerliMi(email))
             {
-                MessageBox.Show("Email formatı hatalı! Lütfen geçerli bir email giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid e-mail format! Please enter a valid e-mail address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Kullanıcı daha önce kayıt oldu mu kontrolü
+            // Check if email already exists
             if (users.Any(u => u.Email == email))
             {
-                MessageBox.Show("This email is already registered!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("This email is already registered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Eğer sistemde hiç kullanıcı yoksa --> Admin yap
+            // First user becomes admin
             string userType = users.Count == 0 ? "admin" : "user";
 
             User newUser = new User
             {
-                Name = "Name",    // Şimdilik sabit, daha sonra ek inputlar açarız
+                Name = "Name", // Placeholder
                 Surname = "Surname",
                 PhoneNumber = "",
                 Address = "",
@@ -105,9 +107,11 @@ namespace OOP2_2425Spring_Grp13
             users.Add(newUser);
             FileHelper.SaveUsersToFile(users);
             users = FileHelper.LoadUsersFromFile();
-            MessageBox.Show("User Registered Successfully!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtEmail.Clear();
-            txtPassword.Clear();
+            MessageBox.Show("User registered successfully!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Email ve şifre kutularını temizlemiyoruz ki login için tekrar girilmesin
+            // txtEmail.Clear();
+            // txtPassword.Clear();
         }
     }
 }

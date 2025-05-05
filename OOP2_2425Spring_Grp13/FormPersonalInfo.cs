@@ -23,6 +23,7 @@ namespace OOP2_2425Spring_Grp13
             InitializeComponent();
             this.currentUser = user;
             LoadUserInfo();
+            UpdateSalary();
         }
         private void LoadUserInfo()
         {
@@ -130,6 +131,11 @@ namespace OOP2_2425Spring_Grp13
                     currentUser.ProfilePhotoBase64 = Convert.ToBase64String(imageBytes);
                 }
             }
+        }
+
+        public void UpdateSalary()
+        {
+            lblSalaryAmount.Text = $"{currentUser.UserSalary} TL";
         }
         private void label1_Click(object sender, EventArgs e)
         {

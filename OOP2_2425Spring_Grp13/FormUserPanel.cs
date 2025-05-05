@@ -46,7 +46,7 @@ namespace OOP2_2425Spring_Grp13
 
         private void btnGoToReminders_Click(object sender, EventArgs e)
         {
-            FormReminder reminders = new FormReminder(currentUser);
+            nFormReminder reminders = new nFormReminder();
             reminders.Show();
         }
 

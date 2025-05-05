@@ -1,15 +1,22 @@
-namespace oopsonhali
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace OOP2_2425Spring_Grp13
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// Uygulaman?n ana girdi noktas?.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            ApplicationConfiguration.Initialize();
-            Application.Run(new ReminderForm());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormLogin());
         }
     }
 }

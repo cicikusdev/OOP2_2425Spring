@@ -19,5 +19,7 @@ namespace OOP2_2425Spring_Grp13
         public string Password { get; set; }
         public string UserType { get; set; } // admin mi user mı part-time-user mı kontrol
         public string ProfilePhotoBase64 { get; set; }
+
+        public float UserSalary { get; set; }
     }
 }

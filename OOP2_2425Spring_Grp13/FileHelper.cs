@@ -37,7 +37,8 @@ namespace OOP2_2425Spring_Grp13
                         Email = parts[4].Trim('"'),
                         Password = parts[5].Trim('"'),
                         UserType = parts[6].Trim('"'),
-                        ProfilePhotoBase64 = parts[7].Trim('"')
+                        ProfilePhotoBase64 = parts[7].Trim('"'),
+                        //UserSalary = float.TryParse(parts[8].Trim('"'), out float salary) ? salary : 0
                     });
                 }
             }

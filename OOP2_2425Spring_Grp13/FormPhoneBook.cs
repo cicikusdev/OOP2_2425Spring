@@ -18,7 +18,6 @@ namespace OOP2_2425Spring_Grp13
         private User user;
         private List<FormPhoneBook> phonebook_list;
         private Form previousForm;
-        private User currentUser;
         
 
         public FormPhoneBook()
@@ -251,7 +250,7 @@ namespace OOP2_2425Spring_Grp13
             }
             else
             {
-                FormUserPanel userPanel = new FormUserPanel(currentUser);
+                FormUserPanel userPanel = new FormUserPanel(user);
                 userPanel.Show(); // Null kontrolü ekleyelim
             }
         }

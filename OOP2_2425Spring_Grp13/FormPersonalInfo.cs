@@ -26,6 +26,7 @@ namespace OOP2_2425Spring_Grp13
             LoadUserInfo();
             UpdateSalary();
             this.previousForm = previousForm;
+            pictureBoxProfile.BackgroundImageLayout = ImageLayout.Stretch;
         }
         private void LoadUserInfo()
         {
@@ -40,7 +41,7 @@ namespace OOP2_2425Spring_Grp13
                 byte[] imageBytes = Convert.FromBase64String(currentUser.ProfilePhotoBase64);
                 using (var ms = new MemoryStream(imageBytes))
                 {
-                    pictureBoxProfile.Image = Image.FromStream(ms);
+                    pictureBoxProfile.BackgroundImage = Image.FromStream(ms);
                 }
             }
         }
@@ -126,7 +127,8 @@ namespace OOP2_2425Spring_Grp13
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     // Fotoğrafı göster
-                    pictureBoxProfile.Image = Image.FromFile(ofd.FileName);
+                    pictureBoxProfile.BackgroundImage = Image.FromFile(ofd.FileName);
+                    pictureBoxProfile.BackgroundImageLayout = ImageLayout.Stretch;
 
                     // Fotoğrafı base64'e çevir ve kaydet
                     byte[] imageBytes = File.ReadAllBytes(ofd.FileName);
@@ -161,6 +163,11 @@ namespace OOP2_2425Spring_Grp13
 
                 previousForm?.Show(); // Null kontrolü ekleyelim
             }
+        }
+
+        private void FormPersonalInfo_Load(object sender, EventArgs e)
+        {
+            pictureBoxProfile.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }

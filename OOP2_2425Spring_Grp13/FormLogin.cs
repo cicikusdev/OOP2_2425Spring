@@ -103,7 +103,7 @@ namespace OOP2_2425Spring_Grp13
                 Email = email,
                 Password = password,
                 UserType = userType,
-                ProfilePhotoBase64 = ""
+                ProfilePhotoBase64 = "",
             };
 
             users.Add(newUser);

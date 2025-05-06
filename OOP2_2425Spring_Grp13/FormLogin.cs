@@ -115,5 +115,10 @@ namespace OOP2_2425Spring_Grp13
             // txtEmail.Clear();
             // txtPassword.Clear();
         }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

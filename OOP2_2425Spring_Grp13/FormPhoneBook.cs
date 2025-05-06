@@ -88,10 +88,7 @@ namespace OOP2_2425Spring_Grp13
 
        // }
 
-        private void FormPhoneBook_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
+        
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
@@ -158,7 +155,7 @@ namespace OOP2_2425Spring_Grp13
 
             FormPhoneBook new_entry = new FormPhoneBook
             {
-                user_id = Guid.Parse(user.Id.ToString("D32")), // Oturum açan kullanıcının ID'sini ata
+                user_id = new Guid(user.Id, 0, 0, new byte[8]), // Oturum açan kullanıcının benzersiz Guid'ini ata
                 id = Guid.NewGuid(),
                 user_name = tb_name.Text.Trim(),
                 user_surname = tb_surname.Text.Trim(),
@@ -167,6 +164,7 @@ namespace OOP2_2425Spring_Grp13
                 address = tb_address.Text.Trim(),
                 description = tb_desc.Text.Trim()
             };
+
 
             if (phonebook_list != null)
             {
@@ -213,14 +211,11 @@ namespace OOP2_2425Spring_Grp13
 
         private void FormPhoneBook_Load(object sender, EventArgs e)
         {
-
-            dgv_phonebook.AutoGenerateColumns = false; // DataGridView'da otomatik sütun oluşturmayı kapat
-
-            dgv_phonebook.Columns.Clear(); // Mevcut sütunları temizle
+            dgv_phonebook.AutoGenerateColumns = false;
+            dgv_phonebook.Columns.Clear();
 
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "idColumn", HeaderText = "ID", DataPropertyName = "id", Visible = false });
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "userIdColumn", HeaderText = "User ID", DataPropertyName = "user_id", Visible = false });
-
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "UserNameColumn", HeaderText = "Ad", DataPropertyName = "user_name" });
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "UserSurnameColumn", HeaderText = "Soyad", DataPropertyName = "user_surname" });
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "PhoneNumberColumn", HeaderText = "Telefon", DataPropertyName = "phone_number" });
@@ -228,18 +223,24 @@ namespace OOP2_2425Spring_Grp13
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "AddressColumn", HeaderText = "Adres", DataPropertyName = "address" });
             dgv_phonebook.Columns.Add(new DataGridViewTextBoxColumn() { Name = "DescriptionColumn", HeaderText = "Açıklama", DataPropertyName = "description" });
 
+            // Kullanıcı ID'sini Guid'e dönüştür
+            Guid userGuid = new Guid(user.Id, 0, 0, new byte[8]);
 
-            phonebook_list = PhonebookFileManager.LoadPhonebookFromFile(user.Id);
+            // Kullanıcıya özgü telefon defterini yükle
+            phonebook_list = PhonebookFileManager.LoadPhonebookFromFile(userGuid);
+
             if (phonebook_list != null)
             {
-                dgv_phonebook.DataSource = phonebook_list; // DataGridView'a listeyi ata
-                dgv_phonebook.Refresh(); // DataGridView'ı yenile
+                dgv_phonebook.DataSource = phonebook_list;
+                dgv_phonebook.Refresh();
             }
             else
             {
                 MessageBox.Show("Kullanıcı listesi yüklenemedi.");
             }
         }
+
+
 
         private void FormPhoneBook_FormClosing(object sender, FormClosingEventArgs e)
         {

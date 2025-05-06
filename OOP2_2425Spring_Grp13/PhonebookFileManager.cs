@@ -11,7 +11,7 @@ namespace OOP2_2425Spring_Grp13
     internal class PhonebookFileManager
     {
         private static string filePath = "phonebook.csv";
-        public static List<FormPhoneBook> LoadPhonebookFromFile(int userId)
+        public static List<FormPhoneBook> LoadPhonebookFromFile(Guid userGuid)
         {
             List<FormPhoneBook> phonebook = new List<FormPhoneBook>();
             if (!File.Exists(filePath))
@@ -42,8 +42,8 @@ namespace OOP2_2425Spring_Grp13
                                 description = parts[7].Trim('"')
                             };
 
-                            // Sadece belirtilen userId'ye ait kayıtları ekle
-                            if (formPhoneBook.user_id == Guid.Parse(userId.ToString()))
+                            // Sadece belirtilen userGuid'e ait kayıtları ekle
+                            if (formPhoneBook.user_id == userGuid)
                             {
                                 phonebook.Add(formPhoneBook);
                             }
@@ -66,6 +66,7 @@ namespace OOP2_2425Spring_Grp13
 
             return phonebook;
         }
+
 
 
 
@@ -100,9 +101,9 @@ namespace OOP2_2425Spring_Grp13
             File.WriteAllLines(filePath, lines);
         }
 
-        public static void UpdatePhonebookEntry(FormPhoneBook updatedEntry, int userId)
+        public static void UpdatePhonebookEntry(FormPhoneBook updatedEntry, Guid userGuid)
         {
-            var phonebook = LoadPhonebookFromFile(userId);
+            var phonebook = LoadPhonebookFromFile(userGuid);
             var entryIndex = phonebook.FindIndex(entry => entry.id == updatedEntry.id);
 
             if (entryIndex >= 0)
@@ -127,9 +128,9 @@ namespace OOP2_2425Spring_Grp13
             }
         }
 
-        public static List<FormPhoneBook> GetAllPhoneBooks(int userId)
+        public static List<FormPhoneBook> GetAllPhoneBooks(Guid userGuid)
         {
-            return LoadPhonebookFromFile(userId);
+            return LoadPhonebookFromFile(userGuid);
         }
 
 

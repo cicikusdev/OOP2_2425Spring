@@ -46,14 +46,14 @@ namespace OOP2_2425Spring_Grp13
             this.dgv_phonebook.AllowUserToDeleteRows = false;
             this.dgv_phonebook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_phonebook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_phonebook.Location = new System.Drawing.Point(30, 46);
-            this.dgv_phonebook.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_phonebook.Location = new System.Drawing.Point(40, 57);
+            this.dgv_phonebook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_phonebook.MultiSelect = false;
             this.dgv_phonebook.Name = "dgv_phonebook";
             this.dgv_phonebook.ReadOnly = true;
             this.dgv_phonebook.RowHeadersWidth = 51;
             this.dgv_phonebook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_phonebook.Size = new System.Drawing.Size(359, 226);
+            this.dgv_phonebook.Size = new System.Drawing.Size(479, 278);
             this.dgv_phonebook.TabIndex = 0;
             // 
             // tb_name
@@ -62,10 +62,10 @@ namespace OOP2_2425Spring_Grp13
             this.tb_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_name.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tb_name.Location = new System.Drawing.Point(413, 46);
-            this.tb_name.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_name.Location = new System.Drawing.Point(551, 57);
+            this.tb_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(151, 29);
+            this.tb_name.Size = new System.Drawing.Size(201, 34);
             this.tb_name.TabIndex = 1;
             this.tb_name.Enter += new System.EventHandler(this.TxtField_Enter);
             this.tb_name.Leave += new System.EventHandler(this.TxtField_Leave);
@@ -76,10 +76,10 @@ namespace OOP2_2425Spring_Grp13
             this.tb_surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_surname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_surname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tb_surname.Location = new System.Drawing.Point(413, 103);
-            this.tb_surname.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_surname.Location = new System.Drawing.Point(551, 127);
+            this.tb_surname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_surname.Name = "tb_surname";
-            this.tb_surname.Size = new System.Drawing.Size(151, 29);
+            this.tb_surname.Size = new System.Drawing.Size(201, 34);
             this.tb_surname.TabIndex = 2;
             this.tb_surname.Enter += new System.EventHandler(this.TxtField_Enter);
             this.tb_surname.Leave += new System.EventHandler(this.TxtField_Leave);
@@ -87,19 +87,19 @@ namespace OOP2_2425Spring_Grp13
             // tb_email
             // 
             this.tb_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tb_email.Location = new System.Drawing.Point(413, 219);
-            this.tb_email.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_email.Location = new System.Drawing.Point(551, 270);
+            this.tb_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(151, 26);
+            this.tb_email.Size = new System.Drawing.Size(200, 30);
             this.tb_email.TabIndex = 18;
             // 
             // tb_address
             // 
             this.tb_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tb_address.Location = new System.Drawing.Point(413, 274);
-            this.tb_address.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_address.Location = new System.Drawing.Point(551, 337);
+            this.tb_address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_address.Name = "tb_address";
-            this.tb_address.Size = new System.Drawing.Size(151, 26);
+            this.tb_address.Size = new System.Drawing.Size(200, 30);
             this.tb_address.TabIndex = 17;
             // 
             // label_name
@@ -107,10 +107,9 @@ namespace OOP2_2425Spring_Grp13
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label_name.ForeColor = System.Drawing.Color.White;
-            this.label_name.Location = new System.Drawing.Point(416, 23);
-            this.label_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_name.Location = new System.Drawing.Point(555, 28);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(60, 21);
+            this.label_name.Size = new System.Drawing.Size(73, 28);
             this.label_name.TabIndex = 6;
             this.label_name.Text = "Name:";
             // 
@@ -119,10 +118,9 @@ namespace OOP2_2425Spring_Grp13
             this.label_surname.AutoSize = true;
             this.label_surname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label_surname.ForeColor = System.Drawing.Color.White;
-            this.label_surname.Location = new System.Drawing.Point(416, 80);
-            this.label_surname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_surname.Location = new System.Drawing.Point(555, 98);
             this.label_surname.Name = "label_surname";
-            this.label_surname.Size = new System.Drawing.Size(82, 21);
+            this.label_surname.Size = new System.Drawing.Size(100, 28);
             this.label_surname.TabIndex = 7;
             this.label_surname.Text = "Surname:";
             // 
@@ -131,10 +129,9 @@ namespace OOP2_2425Spring_Grp13
             this.label_no.AutoSize = true;
             this.label_no.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label_no.ForeColor = System.Drawing.Color.White;
-            this.label_no.Location = new System.Drawing.Point(415, 137);
-            this.label_no.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_no.Location = new System.Drawing.Point(553, 169);
             this.label_no.Name = "label_no";
-            this.label_no.Size = new System.Drawing.Size(63, 21);
+            this.label_no.Size = new System.Drawing.Size(76, 28);
             this.label_no.TabIndex = 8;
             this.label_no.Text = "Phone:";
             // 
@@ -143,10 +140,9 @@ namespace OOP2_2425Spring_Grp13
             this.label_email.AutoSize = true;
             this.label_email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label_email.ForeColor = System.Drawing.Color.White;
-            this.label_email.Location = new System.Drawing.Point(415, 195);
-            this.label_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_email.Location = new System.Drawing.Point(553, 240);
             this.label_email.Name = "label_email";
-            this.label_email.Size = new System.Drawing.Size(57, 21);
+            this.label_email.Size = new System.Drawing.Size(69, 28);
             this.label_email.TabIndex = 9;
             this.label_email.Text = "Email:";
             // 
@@ -155,10 +151,9 @@ namespace OOP2_2425Spring_Grp13
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(415, 250);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(553, 308);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 21);
+            this.label5.Size = new System.Drawing.Size(92, 28);
             this.label5.TabIndex = 10;
             this.label5.Text = "Address:";
             // 
@@ -167,10 +162,9 @@ namespace OOP2_2425Spring_Grp13
             this.label_desc.AutoSize = true;
             this.label_desc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label_desc.ForeColor = System.Drawing.Color.White;
-            this.label_desc.Location = new System.Drawing.Point(416, 305);
-            this.label_desc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_desc.Location = new System.Drawing.Point(555, 375);
             this.label_desc.Name = "label_desc";
-            this.label_desc.Size = new System.Drawing.Size(102, 21);
+            this.label_desc.Size = new System.Drawing.Size(126, 28);
             this.label_desc.TabIndex = 11;
             this.label_desc.Text = "Description:";
             // 
@@ -180,10 +174,10 @@ namespace OOP2_2425Spring_Grp13
             this.tb_desc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_desc.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tb_desc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tb_desc.Location = new System.Drawing.Point(413, 328);
-            this.tb_desc.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_desc.Location = new System.Drawing.Point(551, 404);
+            this.tb_desc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_desc.Name = "tb_desc";
-            this.tb_desc.Size = new System.Drawing.Size(151, 29);
+            this.tb_desc.Size = new System.Drawing.Size(201, 34);
             this.tb_desc.TabIndex = 12;
             // 
             // btn_clear
@@ -193,10 +187,10 @@ namespace OOP2_2425Spring_Grp13
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btn_clear.ForeColor = System.Drawing.Color.White;
-            this.btn_clear.Location = new System.Drawing.Point(254, 328);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_clear.Location = new System.Drawing.Point(339, 404);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(75, 29);
+            this.btn_clear.Size = new System.Drawing.Size(100, 36);
             this.btn_clear.TabIndex = 13;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
@@ -209,10 +203,10 @@ namespace OOP2_2425Spring_Grp13
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(333, 328);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_save.Location = new System.Drawing.Point(444, 404);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(56, 29);
+            this.btn_save.Size = new System.Drawing.Size(75, 36);
             this.btn_save.TabIndex = 14;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -225,10 +219,10 @@ namespace OOP2_2425Spring_Grp13
             this.btn_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_remove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btn_remove.ForeColor = System.Drawing.Color.White;
-            this.btn_remove.Location = new System.Drawing.Point(175, 328);
-            this.btn_remove.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_remove.Location = new System.Drawing.Point(233, 404);
+            this.btn_remove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_remove.Name = "btn_remove";
-            this.btn_remove.Size = new System.Drawing.Size(75, 29);
+            this.btn_remove.Size = new System.Drawing.Size(100, 36);
             this.btn_remove.TabIndex = 15;
             this.btn_remove.Text = "Delete";
             this.btn_remove.UseVisualStyleBackColor = false;
@@ -237,19 +231,19 @@ namespace OOP2_2425Spring_Grp13
             // tb_phone
             // 
             this.tb_phone.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tb_phone.Location = new System.Drawing.Point(413, 161);
-            this.tb_phone.Margin = new System.Windows.Forms.Padding(2);
+            this.tb_phone.Location = new System.Drawing.Point(551, 198);
+            this.tb_phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_phone.Mask = "(999) 000-0000";
             this.tb_phone.Name = "tb_phone";
-            this.tb_phone.Size = new System.Drawing.Size(151, 29);
+            this.tb_phone.Size = new System.Drawing.Size(200, 34);
             this.tb_phone.TabIndex = 16;
             // 
             // FormPhoneBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(611, 384);
+            this.ClientSize = new System.Drawing.Size(815, 473);
             this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.btn_save);
@@ -266,12 +260,10 @@ namespace OOP2_2425Spring_Grp13
             this.Controls.Add(this.tb_surname);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.dgv_phonebook);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPhoneBook";
-
             this.Text = "Phone Book";
-
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPhoneBook_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPhoneBook_FormClosing);
             this.Load += new System.EventHandler(this.FormPhoneBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phonebook)).EndInit();
             this.ResumeLayout(false);
